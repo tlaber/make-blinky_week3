@@ -95,20 +95,20 @@ int main(void)
 	  if(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //if button is pressed
 	  {
 		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);  //turn on LED
-		  HAL_Delay(200);  //debounce for 200 ms
+		  HAL_Delay(50);  //debounce for 50 ms
 		  while(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is released
 		  {
 		  }
-		  HAL_Delay(200);  //debounce for 200 ms
+		  HAL_Delay(50);  //debounce for 50 ms
 		  while(!HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is pressed again
 		  {
 		  }
 		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);  //turn off LED
-		  HAL_Delay(200);  //debounce for 200 ms
+		  HAL_Delay(50);  //debounce for 50 ms
 		  while(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is released
 		  {
 		  }
-		  HAL_Delay(200);  //debounce for 200 ms
+		  HAL_Delay(50);  //debounce for 50 ms
 	  }
   }
   /* USER CODE END 3 */

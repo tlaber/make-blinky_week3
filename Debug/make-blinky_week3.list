@@ -398,8 +398,8 @@ int main(void)
  80004fc:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000500:	4817      	ldr	r0, [pc, #92]	; (8000560 <main+0x84>)
  8000502:	f000 fc8b 	bl	8000e1c <HAL_GPIO_WritePin>
-		  HAL_Delay(200);  //debounce for 200 ms
- 8000506:	20c8      	movs	r0, #200	; 0xc8
+		  HAL_Delay(50);  //debounce for 50 ms
+ 8000506:	2032      	movs	r0, #50	; 0x32
  8000508:	f000 f9e2 	bl	80008d0 <HAL_Delay>
 		  while(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is released
  800050c:	bf00      	nop
@@ -411,8 +411,8 @@ int main(void)
  800051a:	d1f8      	bne.n	800050e <main+0x32>
 		  {
 		  }
-		  HAL_Delay(200);  //debounce for 200 ms
- 800051c:	20c8      	movs	r0, #200	; 0xc8
+		  HAL_Delay(50);  //debounce for 50 ms
+ 800051c:	2032      	movs	r0, #50	; 0x32
  800051e:	f000 f9d7 	bl	80008d0 <HAL_Delay>
 		  while(!HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is pressed again
  8000522:	bf00      	nop
@@ -429,8 +429,8 @@ int main(void)
  8000534:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000538:	4809      	ldr	r0, [pc, #36]	; (8000560 <main+0x84>)
  800053a:	f000 fc6f 	bl	8000e1c <HAL_GPIO_WritePin>
-		  HAL_Delay(200);  //debounce for 200 ms
- 800053e:	20c8      	movs	r0, #200	; 0xc8
+		  HAL_Delay(50);  //debounce for 50 ms
+ 800053e:	2032      	movs	r0, #50	; 0x32
  8000540:	f000 f9c6 	bl	80008d0 <HAL_Delay>
 		  while(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is released
  8000544:	bf00      	nop
@@ -442,8 +442,8 @@ int main(void)
  8000552:	d1f8      	bne.n	8000546 <main+0x6a>
 		  {
 		  }
-		  HAL_Delay(200);  //debounce for 200 ms
- 8000554:	20c8      	movs	r0, #200	; 0xc8
+		  HAL_Delay(50);  //debounce for 50 ms
+ 8000554:	2032      	movs	r0, #50	; 0x32
  8000556:	f000 f9bb 	bl	80008d0 <HAL_Delay>
 	  if(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //if button is pressed
  800055a:	e7c7      	b.n	80004ec <main+0x10>
