@@ -92,16 +92,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  /* USER CODE END WHILE */
-	  if(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0))
+	  if(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //if button is pressed
 	  {
-		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
+		  HAL_Delay(200);  //debounce for 200 ms
+		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);  //turn on LED
+		  while(!HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is pressed again
+		  {
+		  }
+		  HAL_Delay(200);  //debounce for 200 ms
+		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);  //turn off LED
 	  }
-	  else
-	  {
-		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-	  }
-    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
@@ -161,7 +161,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PA0 */
   GPIO_InitStruct.Pin = GPIO_PIN_0;
