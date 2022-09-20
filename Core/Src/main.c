@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "button_handler.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -92,24 +93,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //if button is pressed
-	  {
-		  GPIOD->ODR |= (1 << 13);  //turn on LED
-		  HAL_Delay(50);  //debounce for 50 ms
-		  while(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is released
-		  {
-		  }
-		  HAL_Delay(50);  //debounce for 50 ms
-		  while(!HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is pressed again
-		  {
-		  }
-		  GPIOD->ODR &= ~(1 << 13);  //turn off LED
-		  HAL_Delay(50);  //debounce for 50 ms
-		  while(HAL_GPIO_ReadPin (GPIOA, GPIO_PIN_0)) //wait until button is released
-		  {
-		  }
-		  HAL_Delay(50);  //debounce for 50 ms
-	  }
+	  button_handler();
   }
   /* USER CODE END 3 */
 }
