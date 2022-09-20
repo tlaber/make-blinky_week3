@@ -2472,16 +2472,16 @@ LOAD c:/st/stm32cubeide_1.6.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x0000000000013f6a      0x1b6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
  .debug_macro   0x0000000000014120      0x1d4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
 
-.debug_line     0x0000000000000000     0x4920
- .debug_line    0x0000000000000000      0x750 ./Core/Src/main.o
- .debug_line    0x0000000000000750      0x66e ./Core/Src/stm32f4xx_hal_msp.o
- .debug_line    0x0000000000000dbe      0x731 ./Core/Src/stm32f4xx_it.o
- .debug_line    0x00000000000014ef      0x6f0 ./Core/Src/system_stm32f4xx.o
- .debug_line    0x0000000000001bdf       0x88 ./Core/Startup/startup_stm32f411vetx.o
- .debug_line    0x0000000000001c67      0x956 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_line    0x00000000000025bd      0xc05 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_line    0x00000000000031c2      0xa8e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_line    0x0000000000003c50      0xcd0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+.debug_line     0x0000000000000000     0x4924
+ .debug_line    0x0000000000000000      0x754 ./Core/Src/main.o
+ .debug_line    0x0000000000000754      0x66e ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_line    0x0000000000000dc2      0x731 ./Core/Src/stm32f4xx_it.o
+ .debug_line    0x00000000000014f3      0x6f0 ./Core/Src/system_stm32f4xx.o
+ .debug_line    0x0000000000001be3       0x88 ./Core/Startup/startup_stm32f411vetx.o
+ .debug_line    0x0000000000001c6b      0x956 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_line    0x00000000000025c1      0xc05 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_line    0x00000000000031c6      0xa8e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_line    0x0000000000003c54      0xcd0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
 
 .debug_str      0x0000000000000000    0x7eeaa
  .debug_str     0x0000000000000000    0x7dc34 ./Core/Src/main.o

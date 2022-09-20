@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  000142f4  00000000  00000000  00024e20  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00004920  00000000  00000000  00039114  2**0
+ 17 .debug_line   00004924  00000000  00000000  00039114  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0007eeaa  00000000  00000000  0003da34  2**0
+ 18 .debug_str    0007eeaa  00000000  00000000  0003da38  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000bc8de  2**0
+ 19 .comment      00000050  00000000  00000000  000bc8e2  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000e18  00000000  00000000  000bc930  2**2
+ 20 .debug_frame  00000e18  00000000  00000000  000bc934  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -393,11 +393,12 @@ int main(void)
  80004f6:	2b00      	cmp	r3, #0
  80004f8:	d0f8      	beq.n	80004ec <main+0x10>
 	  {
-		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);  //turn on LED
- 80004fa:	2201      	movs	r2, #1
- 80004fc:	f44f 5100 	mov.w	r1, #8192	; 0x2000
- 8000500:	4817      	ldr	r0, [pc, #92]	; (8000560 <main+0x84>)
- 8000502:	f000 fc8b 	bl	8000e1c <HAL_GPIO_WritePin>
+		  GPIOD->ODR |= (1 << 13);  //turn on LED
+ 80004fa:	4b19      	ldr	r3, [pc, #100]	; (8000560 <main+0x84>)
+ 80004fc:	695b      	ldr	r3, [r3, #20]
+ 80004fe:	4a18      	ldr	r2, [pc, #96]	; (8000560 <main+0x84>)
+ 8000500:	f443 5300 	orr.w	r3, r3, #8192	; 0x2000
+ 8000504:	6153      	str	r3, [r2, #20]
 		  HAL_Delay(50);  //debounce for 50 ms
  8000506:	2032      	movs	r0, #50	; 0x32
  8000508:	f000 f9e2 	bl	80008d0 <HAL_Delay>
@@ -424,11 +425,12 @@ int main(void)
  8000530:	d0f8      	beq.n	8000524 <main+0x48>
 		  {
 		  }
-		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);  //turn off LED
- 8000532:	2200      	movs	r2, #0
- 8000534:	f44f 5100 	mov.w	r1, #8192	; 0x2000
- 8000538:	4809      	ldr	r0, [pc, #36]	; (8000560 <main+0x84>)
- 800053a:	f000 fc6f 	bl	8000e1c <HAL_GPIO_WritePin>
+		  GPIOD->ODR &= ~(1 << 13);  //turn off LED
+ 8000532:	4b0b      	ldr	r3, [pc, #44]	; (8000560 <main+0x84>)
+ 8000534:	695b      	ldr	r3, [r3, #20]
+ 8000536:	4a0a      	ldr	r2, [pc, #40]	; (8000560 <main+0x84>)
+ 8000538:	f423 5300 	bic.w	r3, r3, #8192	; 0x2000
+ 800053c:	6153      	str	r3, [r2, #20]
 		  HAL_Delay(50);  //debounce for 50 ms
  800053e:	2032      	movs	r0, #50	; 0x32
  8000540:	f000 f9c6 	bl	80008d0 <HAL_Delay>
